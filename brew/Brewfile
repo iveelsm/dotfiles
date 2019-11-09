@@ -17,6 +17,11 @@ brew install kubernetes-helm
 
 
 ###################################
+#         Golang Commands         #
+################################### 
+brew install go
+
+###################################
 #          Node Commands          #
 ################################### 
 brew install nvm
