@@ -1,0 +1,51 @@
+
+###################################
+#              Fonts              #
+################################### 
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
+###################################
+#         Docker Commands         #
+################################### 
+brew install dive
+brew install docker
+brew install docker-compose
+brew install minikube
+brew install kubernetes-cli
+brew install kubernetes-helm
+
+
+###################################
+#         Golang Commands         #
+################################### 
+brew install go
+
+###################################
+#          Node Commands          #
+################################### 
+brew install nvm
+brew install node
+brew install yarn
+
+
+###################################
+#          Java Commands          #
+################################### 
+brew install gradle
+
+
+###################################
+#          BEAM Commands          #
+################################### 
+brew install erlang
+brew install elixir
+
+
+###################################
+#        General Commands         #
+################################### 
+brew install jq
+brew install thefuck
+brew install tree 
+brew install cloc
