@@ -33,6 +33,7 @@ brew install yarn
 #          Java Commands          #
 ################################### 
 brew install gradle
+brew install jenv
 
 
 ###################################
