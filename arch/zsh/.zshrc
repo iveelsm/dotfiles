@@ -59,7 +59,6 @@ ZSH_THEME="agnoster"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -92,10 +91,42 @@ source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 # export ARCHFLAGS="-arch x86_64"
 
 ######################################################
+# ENVIRONMENT VARIABLES
+#####################################################
+
+HISTSIZE=10000
+HISTFILESIZE=20000
+HIST_STAMPS="yyyy-mm-dd"
+
+######################################################
+# PATH MODIFICATIONS
+######################################################
+
+export PATH=$HOME/git/depot_tools:$PATH
+export PATH=$PATH:$HOME/.jenv/bin
+
+######################################################
+# CUSTOM STARTUP
+######################################################
+
+eval "$(jenv init -)"
+
+source /usr/share/nvm/init-nvm.sh
+
+if type thefuck &> /dev/null; then
+	eval "$(thefuck --alias)" 
+fi
+
+######################################################
 # ALIASES
 #######################################################
 
-## Git
+# Programs
+
+alias slack='slack & > /dev/null'
+alias firefox='firefox & > /dev/null'
+
+# Git
 
 alias gs='git status'
 alias pop='git stash pop'
@@ -152,7 +183,10 @@ alias ungz='tar -xvzf'
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
-#######################################################
+# Clear scrollback
+alias clean="printf \"\ec\e[3J\""
+
+######################################################
 # FUNCTIONS
 #######################################################
 
@@ -188,11 +222,3 @@ extract() {
 		fi
 	done
 }
-
-HISTSIZE=10000
-HISTFILESIZE=20000
-
-if type thefuck &> /dev/null; then
-		eval "$(thefuck --alias)"
-fi
-

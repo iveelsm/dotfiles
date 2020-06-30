@@ -47,7 +47,12 @@ URxvt.cursorBlink:                      false
 URxvt.utf8:                             true
 URxvt.locale:                           true
 URxvt.letterSpace:              -1
-Urxvt.font:             xft:Terminus:size=12,xft:Inconsolata\ for\ Powerline:size=12
+!URxvt.font: xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
+!URxvt.font: -*-terminus-medium-r-normal--16-*-*-*-*-*-*-*
+!Urxvt.font:             xft:Inconsolata\ for\ Powerline:size=14
+URxvt*font: xft:Droid Sans Mono for Powerline:size=10
+URxvt*letterSpace: -2
+!URxvt.font:             xft:monospace:pixelsize=18
 !URxvt.boldFont:         xft:monospace:pixelsize=14:style=bold
 ! Perl extensions
 URxvt.perl-ext-common:     default,matcher
