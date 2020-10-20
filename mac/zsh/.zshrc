@@ -1,10 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mikey.sleevi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_DISABLE_COMPFIX=true
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -59,7 +55,6 @@ ZSH_THEME="agnoster"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -69,8 +64,8 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(git zsh_reload)
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -102,19 +97,23 @@ HIST_STAMPS="yyyy-mm-dd"
 # CUSTOM STARTUP
 ######################################################
 
-eval "$(jenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if type thefuck &> /dev/null; then
-	eval "$(thefuck --alias)" 
-fi
+source ~/env/thefuck.sh
+source ~/env/sdkman.sh
+source ~/env/chromium.sh
+source ~/env/terraform.sh
+source ~/env/node.sh
+source ~/env/ruby.sh
 
 ######################################################
 # ALIASES
 #######################################################
+
+# Programs
+
+alias slack='slack & > /dev/null'
+alias firefox='firefox & > /dev/null'
+
+# Git
 
 alias gs='git status'
 alias pop='git stash pop'
@@ -146,7 +145,7 @@ alias vi='vim'
 alias cd..='cd ..'
 
 # ls aliases
-alias ls='ls -alh'
+alias ls='ls -alhF'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -170,10 +169,11 @@ alias ungz='tar -xvzf'
 
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
-alias docker-login="saml2aws exec --exec-profile monolith -- aws ecr --no-include-email get-login --region us-east-1 | sh"
 
+# Clear scrollback
+alias clean="printf \"\ec\e[3J\""
 
-#######################################################
+######################################################
 # FUNCTIONS
 #######################################################
 
@@ -183,7 +183,7 @@ cd() {
 		builtin cd "$@" && ls
 	else
 		builtin cd ~ && ls
-	fi
+	fi	
 }
 
 # Extract any archive
@@ -209,6 +209,3 @@ extract() {
 		fi
 	done
 }
-
-
-
