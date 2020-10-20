@@ -19,3 +19,6 @@
 [merge]
   # show original change, incoming change, and unchanged
   conflictstyle = diff3
+
+[pull]
+  ff = only

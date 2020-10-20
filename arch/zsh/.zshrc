@@ -1,9 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-
 # Path to your oh-my-zsh installation.
-export ZSH="/home/iveelsm/.oh-my-zsh"
+export ZSH="/home/iveelsm/.zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,9 +64,9 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh_reload)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/zsh-config.sh
 source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # User configuration
@@ -99,23 +95,15 @@ HISTFILESIZE=20000
 HIST_STAMPS="yyyy-mm-dd"
 
 ######################################################
-# PATH MODIFICATIONS
-######################################################
-
-export PATH=$HOME/git/depot_tools:$PATH
-export PATH=$PATH:$HOME/.jenv/bin
-
-######################################################
 # CUSTOM STARTUP
 ######################################################
 
-eval "$(jenv init -)"
-
-source /usr/share/nvm/init-nvm.sh
-
-if type thefuck &> /dev/null; then
-	eval "$(thefuck --alias)" 
-fi
+source ~/env/thefuck.sh
+source ~/env/sdkman.sh
+source ~/env/chromium.sh
+source ~/env/terraform.sh
+source ~/env/node.sh
+source ~/env/ruby.sh
 
 ######################################################
 # ALIASES

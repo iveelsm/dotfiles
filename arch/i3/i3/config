@@ -198,15 +198,14 @@ bindsym $mod+Pause mode "$mode_system"
 
 bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id code
-bindsym $mod+F3 exec --no-startup-id idea
-bindsym $mod+F4 exec --no-startup-id insomnia
+bindsym $mod+F3 exec --no-startup-id insomnia
+bindsym $mod+F4 exec --no-startup-id idea
 
 bindsym $mod+F5 exec --no-startup-id spotify
-bindsym $mod+F6 exec --no-startup-id tusk
+bindsym $mod+F6 exec --no-startup-id notion
 
-bindsym $mod+F9 exec --no-startup-id signal-desktop
-bindsym $mod+F10 exec --no-startup-id slack
+bindsym $mod+F9 exec --no-startup-id slack
+bindsym $mod+F10 exec --no-startup-id signal-desktop
 bindsym $mod+F11 exec --no-startup-id keybase-gui
 
 bindsym $mod+Ctrl+q exec loginctl lock-session
-bindsym $mod+F12 exec bash
