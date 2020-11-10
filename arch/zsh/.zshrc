@@ -99,11 +99,8 @@ HIST_STAMPS="yyyy-mm-dd"
 ######################################################
 
 source ~/env/thefuck.sh
-source ~/env/sdkman.sh
 source ~/env/chromium.sh
-source ~/env/terraform.sh
-source ~/env/node.sh
-source ~/env/ruby.sh
+source ~/env/asdf.sh
 
 ######################################################
 # ALIASES
