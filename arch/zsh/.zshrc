@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.zsh"
+export ZSH="/home/iveelsm/.zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -67,7 +67,7 @@ ZSH_THEME="agnoster"
 plugins=(git zsh_reload)
 
 source $ZSH/zsh-config.sh
-source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+#source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # User configuration
 
@@ -99,8 +99,13 @@ HIST_STAMPS="yyyy-mm-dd"
 ######################################################
 
 source ~/env/thefuck.sh
+source ~/env/sdkman.sh
 source ~/env/chromium.sh
-source ~/env/asdf.sh
+source ~/env/terraform.sh
+source ~/env/node.sh
+source ~/env/ruby.sh
+source ~/env/golang.sh
+#source ~/env/asdf.sh
 
 ######################################################
 # ALIASES
@@ -189,6 +194,7 @@ extract() {
 	for archive in $*; do
 		if [ -f $archive ] ; then
 			case $archive in
+				*.tar.xz)    tar xf $archive      ;;
 				*.tar.bz2)   tar xvjf $archive    ;;
 				*.tar.gz)    tar xvzf $archive    ;;
 				*.bz2)       bunzip2 $archive     ;;
@@ -207,3 +213,9 @@ extract() {
 		fi
 	done
 }
+
+source ~/env/compress.sh
+########################################################
+# COMPANY SPECIFIC ENVIRONMENTS
+#######################################################
+
