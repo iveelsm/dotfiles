@@ -4,8 +4,8 @@ if [ "$(playerctl --player=spotify metadata --format "{{ title }} - {{ artist }}
     echo ""
 else
   if [ "$(playerctl --player=spotify status)" == "Playing" ]; then
-    echo " %{T2}%{T-} "
+    echo "%{T2}%{T-}"
   else
-    echo " %{T2}%{T-} "
+    echo "%{T2}%{T-}"
   fi  
 fi

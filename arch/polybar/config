@@ -1,5 +1,4 @@
 include-file = ~/.config/polybar/base/base.ini
-include-file = ~/.config/polybar/github/github.ini
 include-file = ~/.config/polybar/spotify/spotify.ini
 include-file = ~/.config/polybar/computer/computer.ini
 include-file = ~/.config/polybar/windows/windows.ini
@@ -11,38 +10,13 @@ include-file = ~/.config/polybar/decor/decor.ini
 [bar/top]
 inherit = bar/main
 enable-ipc = true
-modules-left = menu i3 decor1 decor2
-modules-center = spotify-icon decor2 spotify-music spotify-prev spotify-play-pause spotify-next
-modules-right = wireless-network date
+modules-left = menu decor-arrowforward windowtitle space i3 
+modules-center = decor-upramp  spotify-icon spotify-music spotify-prev spotify-play-pause spotify-next decor-downreversed
+modules-right =  wireless-network  date
+
 
 [bar/bottom]
 inherit = bar/main
 bottom = true
-modules-left = powermenu services docker github
-modules-right = fans cpu memory
-
-;================================
-;  Modules
-;================================
-
-[module/powermenu]
-type = custom/menu
-
-format-padding = 5
-
-label-open = Apps
-label-close = x
-
-menu-0-0 = Lock
-menu-0-0-foreground = #fba922
-menu-0-0-exec = bspc quit -1
-
-menu-0-1 = Reboot
-menu-0-1-foreground = #fba922
-menu-0-1-exec = idea
-
-menu-0-2 = Power Off
-menu-0-2-foreground = #fba922
-menu-0-2-exec = squirrel
-
-label-separator = | 
+modules-left = space services space docker
+modules-right = cpu memory
