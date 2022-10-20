@@ -1,8 +1,0 @@
-polybar 3.4.3-2
-ttf-font-awesome 5.15.2-1
-otf-fira-code 4-1
-ttf-fira-code 5.2-1
-ttf-openlogos-archupdate 1.0-2
-rofi 1.6.1-1
-ttf-iosevka 5.0.1-1
-playerctl 2.3.1-1
