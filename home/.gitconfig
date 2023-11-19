@@ -11,3 +11,10 @@
 
 [difftool "kitty.gui"]
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+
+[safe]
+	directory = /opt/nvm
+
+[user]
+	name = Mikey Sleevi
+	email = development@frogman.simplelogin.com

@@ -11,7 +11,6 @@ alias rm='rm -v'
 # always make full path
 alias mkdir='mkdir -p -v'
 
-
 # ls aliases
 alias ls='ls -alhF --color=auto'
 alias ll='ls -alF'
