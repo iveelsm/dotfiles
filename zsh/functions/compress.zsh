@@ -6,7 +6,7 @@ function compress {
 	EXTENSION="tar.gz"
 	TO_COMPRESS=""
 
-	help() {
+	function help {
 		echo "${NAME} [-h] [-t type] [-c compress] compresses a file or directory\n"
 		echo "where:"
 		echo "    -h  show this help text"

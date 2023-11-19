@@ -26,15 +26,15 @@ function fraugman_hooks_git {
     local ref branch
     ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
     case $? in       
-    0)
-         # $ref contains the name of a checked-out branch.
-        ;;          
-    128)
-        # No Git repository here.
-        return ;;  
-    *)
-        # HEAD is detached
-        ref=$(command git rev-parse --short HEAD 2> /dev/null) || return ;;
+        0)
+            # $ref contains the name of a checked-out branch.
+            ;;          
+        128)
+            # No Git repository here.
+            return ;;  
+        *)
+            # HEAD is detached
+            ref=$(command git rev-parse --short HEAD 2> /dev/null) || return ;;
     esac
     branch=${ref#refs/heads/}
 
