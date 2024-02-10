@@ -1,0 +1,40 @@
+
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "files.autoSave": "onFocusChange",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.rulers": [
+        80
+    ],
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.cursorBlinking": "solid",
+    "editor.renderWhitespace": "selection",
+    "editor.autoIndent": "full",
+    "editor.tabSize": 4,
+    "editor.fontFamily": "Berkeley Mono",
+    "debug.console.fontFamily": "Berkeley Mono",
+    "editor.fontLigatures": true,
+    "window.titleBarStyle": "custom",
+    "terminal.integrated.fontSize": 13,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "recommendations": [
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "golang.go",
+        "hashicorp.terraform",
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-azuretools.vscode-docker"
+    ],
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "workbench.editor.enablePreview": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.rendererType": "dom",
+    "C_Cpp.default.cStandard": "gnu99",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.updateChannel": "Insiders"
+}
