@@ -15,6 +15,6 @@ source $root/functions/functions.zsh
 # Tools often rely on function definitions, and are the most complicated loads
 source $root/tools/tools.zsh
 # Company specific functions that are complex
-source $root/company/company.zsh
+include $root/company/company.zsh
 
 eval $(thefuck --alias)
