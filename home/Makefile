@@ -3,6 +3,8 @@
 install:
 	mkdir -p $(HOME)/.ssh
 	cp ./.ssh/config $(HOME)/.ssh/config
+	mkdir -p $(HOME)/.ssh/config.d/
+	cp -r ./.ssh/config.d/* $(HOME)/.ssh/config.d/
 	mkdir -p $(HOME)/.vscode
 	cp ./.vscode/settings.json $(HOME)/.vscode/settings.json
 	cp ./.vimrc $(HOME)/.vimrc

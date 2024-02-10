@@ -160,6 +160,7 @@ function __setprompt {
 	# Skip to the next line
 	PS1+="\n"
 
+	PS1+="\u@\h:\w"
 	if [[ $EUID -ne 0 ]]; then
 		PS1+="\[${GREEN}\]$\[${NOCOLOR}\] " # Normal user
 	else
