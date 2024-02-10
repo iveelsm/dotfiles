@@ -35,8 +35,6 @@ brew install rbenv
 #          Java Commands          #
 ################################### 
 brew install gradle
-brew install jenv
-
 
 ###################################
 #          BEAM Commands          #
