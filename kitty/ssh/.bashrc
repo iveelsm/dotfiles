@@ -9,6 +9,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Source local environment variables
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
+fi
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

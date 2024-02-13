@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+source $HOME/.bash/env/env.sh
