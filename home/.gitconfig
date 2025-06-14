@@ -14,7 +14,12 @@
 
 [safe]
 	directory = /opt/nvm
+	directory = /opt/goenv
+	directory = /opt/rbenv
+	directory = /opt/tfenv
 
-[user]
-	name = Mikey Sleevi
-	email = development@frogman.simplelogin.com
+[includeIf "gitdir:~/gatech/"]
+    path = ~/.gitconfig.d/gatech
+
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig.d/git
