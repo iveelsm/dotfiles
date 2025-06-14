@@ -11,5 +11,5 @@ source $(dirname $0)/sdkman.zsh
 source $(dirname $0)/terraform.zsh
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  source $(dirname $0)/brew.zsh
+	source $(dirname $0)/brew.zsh
 fi
