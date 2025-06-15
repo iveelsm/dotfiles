@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+_debug "Loading tools from the environment..."
+
 source $(dirname $0)/aws.zsh
 source $(dirname $0)/gcloud.zsh
 source $(dirname $0)/golang.zsh

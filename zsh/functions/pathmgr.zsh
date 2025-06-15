@@ -42,9 +42,11 @@ function pathadd {
 	local current_path="${(P)varname}"
 
 	if [[ ":$current_path:" == *":$toadd:"* ]]; then
-		echo "$toadd is already present in \$$varname"
+		_debug "$toadd is already present in \$$varname"
+		return 0
 	else
 		current_path="$toadd:$current_path"
 		typeset -g "${varname}=$current_path"
+		return 0
 	fi
 }
