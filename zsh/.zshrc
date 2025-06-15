@@ -16,5 +16,3 @@ source $root/functions/functions.zsh
 source $root/tools/tools.zsh
 # Company specific functions that are complex
 include $root/company/company.zsh
-
-eval $(thefuck --alias)

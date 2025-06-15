@@ -21,7 +21,7 @@ function _prompt {
 
     # Retrieve the git status
     git_status="%F{${FRAUGMAN_COLORS[host]:-yellow}}$(fraugman_hooks_git)%f"
-    
+
     # Create a pad for the length of the terminal
     left=$(pad $left $git_status)
 
@@ -31,12 +31,12 @@ function _prompt {
     PS1="${left}"
 }
 
-# 
+#
 function prompt_fraugman_cleanup {
 
 }
 
-# 
+#
 function prompt_fraugman_preexec {
 
 }
@@ -71,6 +71,7 @@ function prompt_fraugman_setup {
 
     autoload -U compinit && compinit
 
+	_debug "Initializing preexec and precmd hooks..."
     autoload -Uz add-zsh-hook
     add-zsh-hook preexec prompt_fraugman_preexec
     add-zsh-hook precmd prompt_fraugman_precmd
@@ -78,6 +79,7 @@ function prompt_fraugman_setup {
     bindkey -v
     zle -N zle-keymap-select
 
+	_debug "Mapping keybinds..."
     keybinds
 
     prompt_cleanup prompt_fraugman_cleanup
