@@ -1,6 +1,4 @@
-#!/usr/bin/env zsh 
+#!/usr/bin/env zsh
 
-export GOENV_ROOT="/opt/goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-
+pathadd /opt/goenv/bin
 eval "$(goenv init -)"

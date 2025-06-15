@@ -1,52 +1,50 @@
 #!/usr/bin/zsh
 
 function pathadd {
-	local pathname=""
+	local varname="PATH"
 	local toadd=""
+
+	function help {
+		echo "Usage: pathadd [-p|--path <VAR>] <path-to-add>"
+		echo ""
+		echo "Options:"
+		echo "  -p, --path <VAR>  Specify the variable to modify (default: PATH)"
+		echo "  -h, --help        Show this help message"
+	}
 
 	function parse_arguments {
 		while [[ $# -gt 0 ]]; do
-			option="${1}"
-			case "${option}" in
+			case "$1" in
 				-p|--path)
-					pathname="${2}"
-					shift
-					shift
+					varname="$2"
+					shift 2
 					;;
 				-h|--help)
 					help
-					shift
-					exit 0
+					return 0
 					;;
 				*)
-					toadd=$option
-					break
-				;;
+					toadd="$1"
+					shift
+					;;
 			esac
 		done
 	}
 
-	function help {
-		echo "${NAME} [-h|--help] <pathtoadd> adds a value to the given path like variable\n"
-		echo "where:"
-		echo "    -p|--path: sets the path variable to manipulate, default is PATH"
-		echo "    -h|--help: displays this help message"
-		echo "    pathtoadd: path to add to the variable"
-	}
+	parse_arguments "$@"
 
-	parse_arguments $@
-	if [ -z $pathname ]; then
-		pathname="PATH"
+	if [[ -z "$toadd" ]]; then
+		echo "Error: No path provided to add"
+		help
+		return 1
 	fi
 
-	case ":${(P)pathname}:" in
-		*":$1:"*) 
-			echo "$toadd is already present in ${(P)pathname}"
-			;;
-		*) 
-			${(P)pathname}="$toadd:${(P)pathname}"
-			;;
-	esac
+	local current_path="${(P)varname}"
 
-	export ${(P)pathname}
+	if [[ ":$current_path:" == *":$toadd:"* ]]; then
+		echo "$toadd is already present in \$$varname"
+	else
+		current_path="$toadd:$current_path"
+		typeset -g "${varname}=$current_path"
+	fi
 }
